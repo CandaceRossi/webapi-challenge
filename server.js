@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const server = express();
 const logger = require("./middleware/logger.js");
 const actionRouter = require("./action/actionRouter");
-// const projectRouter = require("./project/projectRouter");
+const projectRouter = require("./project/projectRouter");
 
 //global middleware
 server.use(helmet());
@@ -13,7 +13,7 @@ server.use(logger);
 server.use(morgan("server"));
 
 server.use("/api/actions", actionRouter);
-// server.use("/api/project", projectRouter);
+server.use("/api/projects", projectRouter);
 
 server.get("/", (req, res) => {
   const nameInsert = req.name ? `${req.name}` : "";

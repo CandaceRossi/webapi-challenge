@@ -3,7 +3,7 @@ function validateAction(req, res, next) {
     ? req.body
       ? next()
       : res.status(400).json({ message: "missing required fields." })
-    : res.status(500).json({ message: "missing user data" });
+    : res.status(500).json({ message: "missing action data" });
 }
 
 module.exports = validateAction;

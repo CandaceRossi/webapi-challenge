@@ -8,7 +8,7 @@ function validateActionId(req, res, next) {
       req.actions = actions;
       next();
     } else {
-      res.status(400).json({ message: "Invalid user id" });
+      res.status(400).json({ message: "Invalid Action Id" });
     }
   });
 }
